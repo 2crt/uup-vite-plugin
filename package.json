@@ -1,0 +1,12 @@
+{
+  "name": "uupvite",
+  "version": "0.0.4",
+  "type": "module",
+  "description": "Vite configuration for WordPress",
+  "main": "index.js",
+  "dependencies": {
+    "picocolors": "^1.0.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
