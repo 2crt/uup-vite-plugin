@@ -27,6 +27,6 @@ Add these scripts to your package.json:
   "scripts": {
     "build": "vite build",
     "dev": "vite"
-	}
+  }
   ...
 ```
