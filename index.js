@@ -43,7 +43,7 @@ export default function uupVite(config) {
                 };
 
                 if (!fs.existsSync(path.dirname(hotFilePath))){
-                    fs.mkdirSync(hotFilePath);
+                    fs.mkdirSync(path.dirname(hotFilePath));
                 }
 
                 fs.writeFileSync(
