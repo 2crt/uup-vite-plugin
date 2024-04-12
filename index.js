@@ -28,9 +28,7 @@ export default function uupVite(config) {
             }
         }),
         configureServer: (server) => {
-            const hotFilePath = path.join(
-                '.hotfile.json'
-            );
+            const hotFilePath = path.join('dist', '.hotfile.json');
                 
             server.httpServer?.once('listening', () => {
                 const httpServer = server.httpServer?.address();
@@ -43,6 +41,10 @@ export default function uupVite(config) {
                     address: `http://${ httpServer.address }:${ httpServer.port }/`,
                     generatedOnHost: os.hostname(),
                 };
+
+                if (!fs.existsSync(path.dirname(hotFilePath))){
+                    fs.mkdirSync(hotFilePath);
+                }
 
                 fs.writeFileSync(
                     hotFilePath,
