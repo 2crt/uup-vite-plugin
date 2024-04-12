@@ -1,15 +1,12 @@
 {
   "name": "uupvite",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Vite configuration for WordPress",
   "type": "module",
-  "exports": {
-    "import": "./index.js",
-    "require": "./index.cjs"
-  },
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup index.js --file index.cjs -c",
+    "build": "rollup -c rollup.config.js",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
