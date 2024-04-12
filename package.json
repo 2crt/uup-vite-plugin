@@ -1,11 +1,24 @@
 {
   "name": "uupvite",
-  "version": "0.0.4",
-  "type": "module",
+  "version": "0.0.5",
   "description": "Vite configuration for WordPress",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup index.js --file index.cjs -c",
+    "prepublishOnly": "npm run build"
+  },
   "dependencies": {
     "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.14.2"
   },
   "author": "",
   "license": "ISC"

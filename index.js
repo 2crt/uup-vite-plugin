@@ -4,7 +4,7 @@ import fs from 'fs';
 import colors from 'picocolors';
 
 export default function uupVite(config) {
-    const open = config.openUrl ?? null;
+    const open = config.openUrl ?? false;
     const port = config.port ?? 1986;
     const input = config.input ?? [];
 
@@ -27,14 +27,18 @@ export default function uupVite(config) {
                 open,
             }
         }),
-        configureServer(server) {
-            if ( ! fs.existsSync('dist')) {
-                fs.mkdirSync('dist');
-            }
-            const hotFilePath = path.join('dist', '.hotfile.json');
-
+        configureServer: (server) => {
+            const hotFilePath = path.join(
+                '.hotfile.json'
+            );
+                
             server.httpServer?.once('listening', () => {
                 const httpServer = server.httpServer?.address();
+                
+                if ( ! httpServer ) {
+                    throw new Error('Could not determine the address of the dev server');
+                }
+                
                 const hotFileData = {
                     address: `http://${ httpServer.address }:${ httpServer.port }/`,
                     generatedOnHost: os.hostname(),
