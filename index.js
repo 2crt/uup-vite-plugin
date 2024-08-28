@@ -10,7 +10,7 @@ export default function uupVite() {
         config: (config) => {
             const port = config.port ?? 1986;
             const input = config.input ?? [];
-            const open = config.openUrl ?? false;
+            const open = config.openUrl ?? getWpInstanceHomeUrl();
 
             return {
                 root: './',
@@ -57,7 +57,7 @@ export default function uupVite() {
                 );
             });
             setTimeout(() => {
-                const wpUrl = getWpInstanceHomeUrl();
+                const wpUrl = open;
 
                 if (wpUrl) {
                     server.config.logger.info(`${colors.green( `  ➜  [WP-vite]: WordPress URL: ${wpUrl}` ) }` );
@@ -99,11 +99,9 @@ function getWpInstanceHomeUrl() {
 				encoding: 'utf8',
 				timeout: 1000
 			}).trim();
-            console.log(homeUrl);
 		} catch (e) {
 			// give up ... in this case the user will need to
 			// open the browser themselves
-            console.log(e);
 			return null
 		}
 	}
