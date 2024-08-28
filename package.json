@@ -1,5 +1,5 @@
 {
-  "name": "uup-vite-plugin",
+  "name": "vite-plugin-uup",
   "version": "0.0.2",
   "description": "Vite configuration for WordPress",
   "repository": {

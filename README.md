@@ -4,7 +4,7 @@ If your project doesn't have package.json, create one: `npm init -y`
 
 Install vite and uupVite
 ```
-npm add -D vite uup-vite-plugin sass
+npm add -D vite vite-plugin-uup sass
 ```
 
 Add these scripts to your `package.json`:
@@ -22,7 +22,7 @@ Add these scripts to your `package.json`:
 
 Create a `vite.config.js`:
 ```
-import uupVite from 'uup-vite-plugin';
+import uupVite from 'vite-plugin-uup';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
