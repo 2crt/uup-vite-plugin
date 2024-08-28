@@ -1,5 +1,5 @@
 {
-  "name": "uupvite",
+  "name": "uup-vite-plugin",
   "version": "0.0.2",
   "description": "Vite configuration for WordPress",
   "type": "module",
