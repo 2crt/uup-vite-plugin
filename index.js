@@ -57,7 +57,7 @@ export default function uupVite() {
                 );
             });
             setTimeout(() => {
-                const wpUrl = open;
+                const wpUrl = server.config.openUrl ?? getWpInstanceHomeUrl();
 
                 if (wpUrl) {
                     server.config.logger.info(`${colors.green( `  ➜  [WP-vite]: WordPress URL: ${wpUrl}` ) }` );
