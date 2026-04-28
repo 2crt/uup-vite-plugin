@@ -16,7 +16,7 @@ export default function uupVite() {
                 root: './',
                 base: './',
                 build: {
-                    rollupOptions: {
+                    rolldownOptions: {
                         input
                     },
                     outDir: './dist/',

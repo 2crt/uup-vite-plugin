@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-uup",
-  "version": "0.0.21",
+  "version": "1.0.0",
   "description": "Vite configuration for WordPress",
   "repository": {
     "type": "git",
@@ -16,16 +16,17 @@
     }
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rolldown -c",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "rollup": "^4.14.2"
+    "rolldown": "^1.0.0-beta.23"
+  },
+  "peerDependencies": {
+    "vite": "^8.0.0"
   },
   "author": "",
   "license": "ISC"

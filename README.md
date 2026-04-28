@@ -2,7 +2,7 @@
 
 If your project doesn't have package.json, create one: `npm init -y`
 
-Install vite and uupVite
+Install vite 8 and uupVite
 ```
 npm add -D vite vite-plugin-uup sass
 ```
